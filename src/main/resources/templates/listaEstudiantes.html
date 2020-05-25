@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Estado</th>
+        </thead>
+        <th:block th:each="estudiante, row: ${students}">
+            <tr>
+                <th th:text="${estudiante.codStudent}"/>
+                <th th:text="${estudiante.name}"/>
+                <th th:text="${estudiante.lastName}"/>
+                <th th:text="${estudiante.age}"/>
+                <th th:text="${estudiante.estadoDelegate}"/>
+            </tr>
+        </th:block>
+    </table>
+    <br>
+    <form th:action="@{/estudiante}">
+        <input type="submit" value="Regresar">
+    </form>
+</body>
+</html>

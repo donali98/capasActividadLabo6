@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Estado</th>
+        </thead>
+        <th:block th:each="estudiante, row:${students}">
+            <tr>
+                <th th:text="${estudiante.codStudent}"/>
+                <th th:text="${estudiante.name}"/>
+                <th th:text="${estudiante.lastName}"/>
+                <th th:text="${estudiante.age}"/>
+                <th th:text="${estudiante.estadoDelegate}"/>
+            </tr>
+        </th:block>
+    </table>
+    <br>
+    <form th:action="@{/mostrarEstudiante}" method="POST">
+        <label>Buscar por codigo de estudiante: </label>
+        <input type="number" name="codigo"><br>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <form th:action="@{/insertarEstudiante}">
+        <input type="submit" value="Insertar nuevo estudiante"><br>
+    </form>
+
+    <form th:action="@{/borrarEstudiante}" method="POST">
+        <label>Borrar estudiante por codigo: </label>
+        <input type="number" name="codigo"><br>
+        <input type="submit" value="Borrar">
+    </form>
+</body>
+</html>

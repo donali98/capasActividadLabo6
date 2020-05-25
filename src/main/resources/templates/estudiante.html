@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante</title>
+</head>
+<body>
+    <label>Estudiante con codigo</label><label th:text="${student.codStudent}"></label>
+    <table>
+        <thead>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Estado</th>
+        </thead>
+        <tr>
+            <th th:text="${student.codStudent}"/>
+            <th th:text="${student.name}"/>
+            <th th:text="${student.lastName}"/>
+            <th th:text="${student.age}"/>
+            <th th:text="${student.estadoDelegate}"/>
+        </tr>
+    </table>
+</body>
+</html>
